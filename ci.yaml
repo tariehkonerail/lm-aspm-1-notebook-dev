@@ -1,0 +1,30 @@
+extraction_dotenv:
+- SNOWFLAKE_ACCOUNT
+- SNOWFLAKE_USER
+- PRIVATE_KEY_FILE
+- PRIVATE_KEY_FILE_PWD
+- SNOWFLAKE_WAREHOUSE
+- PROD_SNOWFLAKE_DATABASE
+data_extraction:
+  run:
+  - sf-extract-attempt-data-evenly-by-sla.py
+  - combine_csvs.py
+  output_datasets:
+  - attempt_success_prediction_final_mi.csv
+  metrics:
+    output: capture_metadata.yaml
+notebooks:
+  run:
+  - attempt-success-prediction-models.ipynb
+  output_models:
+    main_models:
+    - model_set0.joblib
+    - model_set1.joblib
+    - model_set2.joblib
+    - model_set3.joblib
+  metrics:
+    output: binary_models.yaml
+  min_criteria:
+    data_coverage_days: 155
+    num_samples: 900000
+    sample_rate_per_sla: Limit 10 delivery ID samples per 10 minutes

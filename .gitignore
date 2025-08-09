@@ -1,0 +1,11 @@
+data_extraction/.env
+/data/cosmos_data.csv
+/real_data/*
+/daily_data/*
+/output_models/*
+/past_month/*
+.idea/
+.DS_Store
+.ipynb_checkpoints/
+.env
+.venv

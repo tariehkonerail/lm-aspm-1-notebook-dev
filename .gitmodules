@@ -1,0 +1,6 @@
+[submodule "lib/onerail_py_ds_shared"]
+	path = lib/onerail_py_ds_shared
+	url = git@github.com:bcatania18/onerail_py_ds_shared.git
+[submodule "lib/ds_shared"]
+	path = lib/ds_shared
+	url = git@github.com:bcatania18/onerail_py_ds_shared.git
