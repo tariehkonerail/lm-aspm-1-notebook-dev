@@ -17,10 +17,11 @@ notebooks:
   run:
   - attempt-success-prediction-models.ipynb
   output_models:
-  - model_set0.joblib
-  - model_set1.joblib
-  - model_set2.joblib
-  - model_set3.joblib
+    main_models:
+    - model_set0.joblib
+    - model_set1.joblib
+    - model_set2.joblib
+    - model_set3.joblib
   metrics:
     output: binary_models.yaml
   min_criteria:
